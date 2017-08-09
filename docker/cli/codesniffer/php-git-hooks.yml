@@ -1,0 +1,54 @@
+pre-commit:
+    enabled: true
+    execute:
+        composer: false
+        jsonlint: true
+        phplint: true
+        phpmd:
+            enabled: false
+            options: null
+        phpcs:
+            enabled: true
+            standard: 'PSR2'
+            ignore: ''
+            options: null
+        php-cs-fixer:
+            enabled: true
+            levels:
+                psr0: true
+                psr1: true
+                psr2: true
+                symfony: false
+            options: null
+        phpunit:
+            enabled: false
+            random-mode: false
+            options: null
+            strict-coverage:
+                enabled: false
+                minimum: null
+            guard-coverage:
+                enabled: false
+                message: null
+    message:
+        right-message: 'HEY, YOUR CODE IS AWESOME!!'
+        error-message: 'FIX YOUR CODE!!'
+commit-msg:
+    enabled: true
+    regular-expression: null
+pre-push:
+    enabled: false
+    execute:
+        phpunit:
+            enabled: false
+            random-mode: false
+            options: null
+            strict-coverage:
+                enabled: false
+                minimum: null
+            guard-coverage:
+                enabled: false
+                message: null
+    message:
+        right-message: ''
+        error-message: ''

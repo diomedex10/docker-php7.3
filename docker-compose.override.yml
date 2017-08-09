@@ -1,0 +1,16 @@
+version: '2'
+services:
+  nginxbackend:
+    extra_hosts:
+      - "local.xxxx.com:127.0.0.1"
+      - "local.xxxxx.com:127.0.0.1"
+    volumes:
+      - ./logs:/var/log/nginx
+      - ~/.ssh:/root/.ssh
+      - ./apps:/apps/:rw
+      - ./logs:/var/log/php-fpm/7.0:rw
+    environment:
+      EXCLUDE_PORTS: 443
+    ports:
+      - "9292:80"  
+ 

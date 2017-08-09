@@ -1,0 +1,9 @@
+#!/usr/local/bin/php
+<?php
+
+require '/vendor/autoload.php';
+
+use PhpGitHooks\Infrastructure\Hook\PreCommit;
+
+$hook = new PreCommit();
+$hook->run();
