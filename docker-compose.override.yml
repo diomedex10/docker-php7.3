@@ -1,16 +1,16 @@
-version: '2'
+version: '3'
 services:
-  nginxbackend:
+  web:
     extra_hosts:
-      - "local.xxxx.com:127.0.0.1"
-      - "local.xxxxx.com:127.0.0.1"
+      - "local.patterns.com:127.0.0.1"
     volumes:
-      - ./logs:/var/log/nginx
+      - ./docker/logs:/var/log/nginx
       - ~/.ssh:/root/.ssh
       - ./apps:/apps/:rw
-      - ./logs:/var/log/php-fpm/7.0:rw
-    environment:
-      EXCLUDE_PORTS: 443
-    ports:
-      - "9292:80"  
+      - ./docker/nginx/vhost:/etc/nginx/conf.d/:ro
+  php:
+    volumes:
+      - ./apps:/apps/:rw
+      - ./docker/logs:/var/log/php-fpm/7.3:rw
+      - ./docker/php/php.conf.d/:/etc/php-7.2.d/:ro
  

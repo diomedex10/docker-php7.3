@@ -1,0 +1,8 @@
+docker/logs/*
+docker/data/mysql56/*
+docker/data/share/*
+apps/*
+.idea/*
+/.idea/*
+docker/apachephp56/ssl/*
+.env

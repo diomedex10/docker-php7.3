@@ -1,8 +1,0 @@
-#!/usr/local/bin/php
-<?php
-require '/vendor/autoload.php';
-
-use PhpGitHooks\Infrastructure\Hook\CommitMsg;
-
-$hook = new CommitMsg();
-$hook->run();
