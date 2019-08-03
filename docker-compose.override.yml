@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 services:
   web:
     extra_hosts:
@@ -12,5 +12,5 @@ services:
     volumes:
       - ./apps:/apps/:rw
       - ./docker/logs:/var/log/php-fpm/7.3:rw
-      - ./docker/php/php.conf.d/:/etc/php-7.2.d/:ro
+      - ./docker/php/php.conf.d/:/etc/php-7.3.d/:ro
  
